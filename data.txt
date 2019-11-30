@@ -1,0 +1,4 @@
+hello world
+
+下載python 3.8 記得勾選 Path
+install flask 模組>寫後端網站
