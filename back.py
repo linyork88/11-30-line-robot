@@ -14,7 +14,8 @@ app=Flask("MY website")#建立一個網站應用程式物件
 #例如：http://127.0.0.1:5000/
 @app.route("/")#指定對應的網址路徑
 def home(): #對應的處理函式
-    return "<h3>Hello Flask</h3><div>this is line 1</div><script>alert('Hello');</script>" #回應給前端的訊息
+    return render_template("home.html") #回應給前端的訊息
+    #複製Html的內容貼進來
 
 #例如：http://127.0.0.1:5000/test.php?keyword=關鍵字
 @app.route("/test.php")#指定對應的網址路徑
@@ -25,8 +26,9 @@ def test(): #對應的處理函示
         return redirect("/") #導向到路徑 /
     else:
         if keyword in data:
-            return "中文:"+data[keyword]
+            return render_template("result.html",result=data[keyword])
         else:
-            return "沒有翻譯"#回應給前端的訊息
+            return render_template("result.html",result="沒有翻譯")#回應給前端的訊息
 
-app.run() #啟動伺服器
+if __name__=="__main__": #如果以主程式執行，立即啟動伺服器
+    app.run() #啟動伺服器

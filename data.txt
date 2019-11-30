@@ -2,3 +2,21 @@ hello world
 
 下載python 3.8 記得勾選 Path
 install flask 模組>寫後端網站
+
+heroku架遠端伺服器網站 (為了讓其他人可以連線)
+heroku 註冊帳號:a106210066@mail.shu.edu.tw 註冊密碼:acac_1435
+1.建立一個APP
+2.創立一個新app，下載heroku CLI(命令列工具) - heroku
+3.安裝 Git 命令列工具 -git 
+4.在命令列登入heroku-heroku login
+5.初始化新的git repository 
+    5.1初始化- git init 
+    5.2設定遠端網址:heroku git:remote -a 專案名稱
+
+6.確認Git repository 的狀況 - git status
+
+7.更新一個版本
+    7.1把更動的檔案加入追蹤管理:git add .
+    7.2建立一個版本(commit):git commit -m "版本記錄訊息"
+    7.3將最新的版本送到遠端(heroku):git push heroku master
+    7.4到heroku app開發的setting 可找到最後更新的網址
